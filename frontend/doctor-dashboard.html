@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Doctor</h2>
+
+        <button>Today's Appointments</button>
+
+        <hr>
+
+        <button>Profile</button>
+        <button>Settings</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <h2>Today's Appointments</h2>
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Student</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>10:00</td>
+                <td>Abhiram</td>
+                <td>Fever</td>
+                <td>Booked</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+function logout(){
+    window.location = "index.html";
+}
+</script>
+
+</body>
+</html>

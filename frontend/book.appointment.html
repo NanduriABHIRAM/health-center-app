@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Student</h2>
+
+        <button onclick="showSection('book')">Book Appointment</button>
+        <button onclick="showSection('history')">Medical History</button>
+
+        <hr>
+
+        <button>Profile</button>
+        <button>Settings</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Book Appointment -->
+        <div id="book" class="section">
+            <h2>Book Appointment</h2>
+
+            <input placeholder="Doctor ID">
+            <input type="date">
+            <input type="time">
+            <input placeholder="Reason">
+
+            <button>Book Appointment</button>
+        </div>
+
+        <!-- Medical History -->
+        <div id="history" class="section" style="display:none;">
+            <h2>Medical History</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Diagnosis</th>
+                    <th>Prescription</th>
+                </tr>
+                <tr>
+                    <td>2026-03-01</td>
+                    <td>Cold</td>
+                    <td>Paracetamol</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function showSection(section){
+    document.getElementById("book").style.display = "none";
+    document.getElementById("history").style.display = "none";
+
+    document.getElementById(section).style.display = "block";
+}
+
+function logout(){
+    window.location = "index.html";
+}
+</script>
+
+</body>
+</html>
