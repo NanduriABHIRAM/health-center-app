@@ -1,39 +1,68 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+/* RESET */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* BODY */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    height: 100vh;
+}
 
-.container {
-    width: 350px;
-    margin: 100px auto;
+/* ================= LOGIN ================= */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* LOGIN CARD */
+.login-card {
+    width: 360px;
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Headings */
-h1, h2 {
+/* TITLE */
+.login-card h1 {
+    margin-bottom: 5px;
     color: #333;
 }
 
-/* Inputs */
-input, select {
-    width: 90%;
+.subtitle {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.login-card input,
+.login-card select {
+    width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 10px 0;
     border-radius: 6px;
     border: 1px solid #ccc;
     outline: none;
+    transition: 0.2s;
 }
 
-/* Button */
-button {
-    width: 95%;
+.login-card input:focus,
+.login-card select:focus {
+    border-color: #4facfe;
+}
+
+/* BUTTON */
+.login-card button {
+    width: 100%;
     padding: 10px;
     background: #4facfe;
     border: none;
@@ -44,28 +73,123 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+.login-card button:hover {
     background: #007bff;
 }
 
-
+/* MESSAGE */
 #msg {
     margin-top: 10px;
     color: red;
 }
 
+/* ================= DASHBOARD ================= */
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 230px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* SIDEBAR BUTTONS */
+.sidebar button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    border: none;
+    background: #34495e;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: #1abc9c;
+}
+
+/* SEPARATOR */
+.sidebar hr {
+    margin: 15px 0;
+    border: 0.5px solid #555;
+}
+
+/* MAIN AREA */
+.main {
+    flex: 1;
+    padding: 30px;
+    background: #ecf0f1;
+    overflow-y: auto;
+}
+
+/* SECTION BOX */
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* HEADINGS */
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* INPUTS INSIDE DASHBOARD */
+.section input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTON INSIDE DASHBOARD */
+.section button {
+    width: 100%;
+    padding: 10px;
+    background: #4facfe;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.section button:hover {
+    background: #007bff;
+}
+
+/* ================= TABLE ================= */
 
 table {
-    width: 80%;
-    margin: 30px auto;
+    width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
     background: white;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
 }
 
 th, td {
     padding: 12px;
-    border: 1px solid #ddd;
     text-align: center;
 }
 
@@ -73,49 +197,32 @@ th {
     background: #4facfe;
     color: white;
 }
-/* Layout */
-.layout {
-    display: flex;
-    height: 100vh;
+
+tr:nth-child(even) {
+    background: #f2f2f2;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 220px;
-    background: #2c3e50;
-    color: white;
-    padding: 20px;
+/* ================= LINKS ================= */
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
-.sidebar h2 {
-    text-align: center;
+a:hover {
+    text-decoration: underline;
 }
 
-.sidebar button {
-    width: 100%;
-    margin: 8px 0;
-    padding: 10px;
-    border: none;
-    background: #34495e;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
+/* ================= ANIMATION ================= */
 
-.sidebar button:hover {
-    background: #1abc9c;
-}
-
-/* Main */
-.main {
-    flex: 1;
-    padding: 30px;
-    background: #ecf0f1;
-}
-
-/* Sections */
-.section {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
